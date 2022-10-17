@@ -13,6 +13,16 @@ check_pkg_deps <- function() {
   }
 }
 
+#' trulia
+#'
+#' @param state
+#' @param city
+#' @param k
+#'
+#' @return
+#' @export
+#'
+#' @examples
 trulia <- function(state, city, k) {
   # to check for package dependencies
   check_pkg_deps()
