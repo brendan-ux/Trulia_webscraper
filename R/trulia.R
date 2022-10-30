@@ -23,7 +23,7 @@ check_pkg_deps <- function() {
 #' @export
 #'
 #' @examples
-trulia <- function(state, city, k) {
+trulia <- function(city, state, k) {
   # to check for package dependencies
   check_pkg_deps()
   prop <- data.frame()
@@ -78,8 +78,8 @@ trulia <- function(state, city, k) {
     contents <- tibble(features, coord, desc) %>%
       janitor::clean_names()
 
-    trulia_list <- bind_rows(trulia_list, contents) %>%
-      janitor::clean_names()
+    trulia_list <- tryCatch(bind_rows(trulia_list, contents) %>%
+      janitor::clean_names(), error = function(e) NA)
   }
   write_csv(trulia_list, file = paste0(paste(
     "Trulia-listings", city, state, Sys.Date(), sep = "-"), ".csv")
