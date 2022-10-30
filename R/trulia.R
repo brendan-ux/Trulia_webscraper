@@ -15,20 +15,20 @@ check_pkg_deps <- function() {
 
 #' trulia
 #'
-#' @param state
 #' @param city
-#' @param k
+#' @param state
+#' @param page
 #'
 #' @return
 #' @export
 #'
 #' @examples
-trulia <- function(city, state, k) {
+trulia <- function(city, state, page) {
   # to check for package dependencies
   check_pkg_deps()
   prop <- data.frame()
   # vacant lots are given /home/ in the url
-  for (i in 1:k) {
+  for (i in 1:page) {
     url = paste0("https://www.trulia.com/", state, "/", city, "/", i, "_p/")
 
     int <- scrape(bow(url)) %>%
