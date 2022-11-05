@@ -5,4 +5,4 @@ It requires the `rvest`, `polite`, and `tidyverse` packages to run, and will loa
 **Currently**- documentation is absent, but `trulia.webscraper::trulia(city, state, page)` is pretty self-explanatory. 
 Where `page` is the number of pages from Trulia for the function to iterate over and `state` is the abbreviation of the state name.
 
-**Example** `trulia("vero_beach", "fl", 5)` would scrape the first five pages of the Trulia.com for residential homes in _Vero Beach, FL_
+**Example:** `trulia("vero_beach", "fl", 5)` would scrape the first five pages of the _Trulia.com_ for residential homes in _Vero Beach, FL_
